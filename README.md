@@ -68,7 +68,7 @@ If you use [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```
 call plug#begin('~/.vim/plugged')
-  Plug 'iggredible/argh.vim
+  Plug 'iggredible/argh.vim'
 call plug#end()
 ```
 
