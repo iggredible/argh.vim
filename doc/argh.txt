@@ -1,0 +1,126 @@
+*Argh.txt*   The args extension you secretly need. Aaarrggh!!
+
+Author:  Igor Irianto <https://irian.to>
+License: The same as Vim's |license|.
+
+==============================================================================
+TABLE OF CONTENTS                                     *Argh*  *Argh-toc*
+
+    1. Intro ........................... |Argh-intro|
+    2. Usage ........................... |Argh-usage|
+    3. Commands ........................ |Argh-commands|
+    4. Bugs ............................ |Argh-bug-report|
+    5. Contributing .................... |Argh-contributing|
+
+==============================================================================
+1. Intro                                                       *Argh-intro*
+
+Argh.vim is a lightweight plugin that extends the `:args` command. It allows 
+you to contextually organize your args files.
+
+==============================================================================
+2. Usage                                                       *Argh-usage*
+
+Argh.vim comes with 3 commands designed to mimic Vim's `:args` commands: >
+
+    :Argh a
+    :Argha a
+    :Arghd a
+
+Wheras `a` is the name of your argument list context.
+
+So what is an argument list context?
+
+Think of a context as a category to help organize the files you are working
+with. With Argh.vim, you can store multiple argument lists and quickly jump
+to it anytime (as long as you haven't exited Vim).
+
+Let's imagine that you need to work on a foo task. You need to work with 
+`foo.rb`, `foo.html`, and `foo.jsx`, so you add them into the argument list
+first: >
+
+    :args foo.rb foo.html foo.jsx
+
+You now have a set of foo files. You can quickly jump across these files and
+even run `:argdo` operation. Basically you don't have to think about what 
+files you have to go to.
+
+Let's say that you also need to work with the bar files (`bar.rb`, 
+`bar.html`, `bar.jsx`). Without Argh.vim, you would have to either start a 
+new argument list (and lose the foo argument list) or append the bar files
+into the foot files.
+
+Neither of the two solutions above are ideal because: first, their contexts 
+(categories) are distinct enough that they are best kept separated, second, 
+you don't want to have too many files in your argument list before you start 
+losing track, and third, keeping them separate allows you to do multi-file 
+operations like `:argdo` on each file set.
+
+With Argh.vim, you can keep both foo and bar separate argument lists!
+
+Assume that your args list is populated with the aforementioned foo
+files (`foo.rb`, `foo.html`, `foo.jsx`). All you need to do is add a new foo 
+context: >
+
+    :Argh foo
+
+Argh.vim creates a foo context containing the current foo files (`foo.rb`,
+`foo.html`, and `foo.jsx`). 
+
+Now you can adda a new bar argument list: >
+
+    :args bar.rb bar.html bar.jsx
+
+Now you argument list contains bar files. To add a new bar context, run: >
+
+    :Argh bar
+
+Now you have two argument list contexts, foo and bar, that you can 
+always jump to anytime. 
+
+By the way, you could also run `:Argha foo` and `:Argha bar` to add a new
+argument list context instead of `:Argh foo`  and `:Argh bar`. They do the
+same thing.
+
+To view all your saved argument list contexts and select one, you can run: >
+
+    :Argh
+
+You can also switch to the foo context by running `:Argh foo`. Note that 
+:Argh foo` can work two different ways: if foo doesn't exist, running 
+`:Argh foo` creates a new argument list context foo. If foo exists, running
+`:Argh foo` switches the current argument list context to foo.
+
+Finally, if you need to remove an existing argument list context foo, run: > 
+
+    :Arghd foo
+
+==============================================================================
+3. Commands                                                *Argh-commands*
+
+                                                            *:Argh*
+:Argh {context}      If `context` doesn't exist, create a new context. If
+                     it exists, switch to that one.
+
+:Argh                Display all available contexts. Select one to go to.
+
+                                                            *:Argha*
+:Argha {context}     Create a new context.
+
+                                                            *:Arghd*
+:Arghd {context}     Delete an existing context
+
+
+==============================================================================
+4. Bugs                                                   *Argh-bug-report*
+
+Feel free to raise an issue.
+
+==============================================================================
+5. Contributing                                         *Argh-contributing*
+
+If you want to contribute to this project, please feel free to submit a
+PR.
+
+==============================================================================
+
