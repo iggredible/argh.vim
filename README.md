@@ -1,6 +1,6 @@
 # Argh.vim
 
-Argh.vim is a lightweight plugin that extends the `:args` command by allowing you to contextually organize your args files.
+Argh.vim is a lightweight plugin that extends the `:args` command by allowing you to contextually organize your arglist files.
 
 ## Motivation
 
@@ -8,11 +8,11 @@ I find that editing with argument list to be more useful than buffers. Why? Beca
 
 However, I feel like the current argument list system is missing one feature: it only allows one file set at any time. What if I need multiple file sets? What if I want to collect 3 UI files in one argument list and 4 backend files in a different argument list?
 
-I find that by adding the ability to store multiple argument list, my args workflow increases exponentially. This Argh.vim plugin allows you to create multiple argument lists so you can group them by their contexts.
+I find that by adding the ability to store multiple argument list, my arglist workflow increases exponentially. This Argh.vim plugin allows you to create multiple argument lists so you can group them by their contexts.
 
 ## Usage
 
-This plugin does not impede with Vim's native args commands. It is simply an extension to the current args workflow.
+This plugin does not impede with Vim's native arglist commands. It is simply an extension to the current arglist workflow.
 
 It comes with only 3 commands that are easy to remember:
 
@@ -24,7 +24,7 @@ It comes with only 3 commands that are easy to remember:
 
 Where `a` is the name of your argument list context. A context is like a category that can help you to organize the files you are working with. Let's say that you need to work with two set of files: UI and Backend files to accomplish whatever task you are working on. How can Argh.vim help?
 
-First, you can collect all the UI files into the args list with `:args ui.jsx ui.html ui.test.js`. Your `:args` should now contain these 3 files. To add a UI context, run:
+First, you can collect all the UI files into the arglist with `:args ui.jsx ui.html ui.test.js`. Your `:args` should now contain these 3 files. To add a UI context, run:
 
 ```
 :Argh ui
@@ -48,7 +48,7 @@ Second, now that we added the ui argument list files into the `ui` context, let'
 
 Argh.vim will store those files under the `backend` context (again, you could equally run `:Argha backend` for a similar effect). 
 
-Now you have two args contexts that you can switch to anytime you want: `ui` and `backend`.
+Now you have two arglist contexts that you can switch to anytime you want: `ui` and `backend`.
 
 To see what context you have and to switch to a different context, run:
 
@@ -67,7 +67,7 @@ Anytime that you are inside a context and you switch to a different context, if 
 
 For example, say you are currently in the `ui` context and your argument list files are `ui.jsx`, `ui.html`, and `ui.test.js`. Then you add a new file into the current argument list (`:arga ui.slim`). You need to save the current argument list. In this case, you need to run either `:Argh ui` or `:Argha ui`. Otherwise, Argh.vim won't know that the `ui` context now has 4 files instead of 3.
 
-If you notice, `:Argh ui` and `:Argha ui` do the same thing. It is because when I was writing this library, I want it to mimic the behavior of args.
+If you notice, `:Argh ui` and `:Argha ui` do the same thing. It is because when I was writing this library, I want it to mimic the behavior of arglist.
 
 Finally, to remove a context, just run the `:Arghd` command. So if you want to remove `ui` context, run:
 
@@ -77,7 +77,7 @@ Finally, to remove a context, just run the `:Arghd` command. So if you want to r
 
 <img src="https://github.com/iggredible/argh.vim/blob/assets/assets/ArghDelete.gif?raw=true" align="left" height="500px">
 
-To summarize, Argh.vim is super useful if you have multiple files in your args list that you want to split into multiple contexts so you can categorize your files and quickly traverse between them.
+To summarize, Argh.vim is super useful if you have multiple files in your arglist that you want to split into multiple contexts so you can categorize your files and quickly traverse between them.
 
 # Installation
 
